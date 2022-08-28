@@ -1,0 +1,146 @@
+#+title: README
+
+* Overview
+A small tool to convert hex to binary.
+
+* Support
+** input with expression
+** 512 bit
+
+* Interface
+** string expressionOperate(const string& input)
+hex & dec arithmetic, return hex string
+
+** string hexToBin(const string& hex)
+return input to binary number
+
+** string binToHex(const string& bin)
+return input to hex number
+
+** string binToDec(const string& bin)
+return input to dec number
+
+** void setInput(const string& newInput, int row, int column)
+input widget set input data
+
+** void setinputHex(const string& newInputHex)
+expressionOperate to set hex string
+
+** const string& inputBin() const
+return inputBin to widget
+
+** const string& output() const
+return hex output
+
+** const string& ouputBin() const
+return bin ouput
+
+** bool exportToFile(const string& filePath)
+export name and input to file
+
+** bool importFromFile(const string& filePath)
+import name and input from file
+
+** int row()
+
+** int column()
+
+** void setRow(int row)
+
+** void setColumn(int column)
+
+** void addOneRow()
+
+** void addOneColumn()
+
+** void setSelectedInput(const string& selectedInput)
+
+** const string& selectedInput() const
+
+** void setSelectedOutput(const string& selectedOutput)
+
+** const string& selectedOutput() const
+
+** void setName(const string& name)
+
+** string diff(const string& bin1, const string& bin2)
+input two binary number, return bin1 xor bin2
+
+* Data
+struct digital {
+    string m_input
+    string m_inputHex(after expressionOperate)
+    string m_inputBin
+    string m_output
+    string m_outputBin
+    string m_selectedInput
+    string m_selectedOutput
+    string m_name
+}; // new when add column/row
+vector<vector<digital>> digitalVec
+int row
+int column
+
+* UI
+** Qt5 & Qt6
+*** Widget
+**** Menu bar
+***** Option
+font size
+bit selection
+
+***** About
+
+**** Input
+label+lineedit 18px
+
+**** Output
+label+lineedit 18px
+
+**** Hex
+
+**** Dec
+
+**** Binary
+***** input
+***** clicked
+***** diff
+
+** Gtk4 & Gtkmm
+
+** Dioxus(Rust)
+
+** Azul(Rust)
+
+** Iced(Rust)
+
+** Theme
+*** Light theme
+*** Night theme
+
+* Docker
+dockerfile
+
+* Release
+** Windows
+msvc & mingw
+winget
+chocolatey
+scoop
+
+** Linux
+appimage
+
+** Macos
+dmg
+
+** Sha256
+
+** Arch
+amd & arm?
+
+** CI
+*** Static check
+clazy
+[https://github.com/marketplace/category/code-quality]
+memory leak
